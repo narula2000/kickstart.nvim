@@ -96,8 +96,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
-
+  { 'folke/which-key.nvim',          opts = {} },
   { -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -198,6 +197,11 @@ require('lazy').setup({
   { -- Github Copilot
     'github/copilot.vim',
     version = "*",
+  },
+
+  { -- Syntax highlight comment
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -568,3 +572,4 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 require('mini.move').setup()
 require('mini.pairs').setup()
+require("todo-comments").setup()
