@@ -204,6 +204,16 @@ require('lazy').setup({
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
+  { -- Center the editor
+    "shortcuts/no-neck-pain.nvim",
+    version = "*",
+    opts = {
+      enableOnVimEnter = true,
+      width = 125,
+      toggleMapping = "<leader>np",
+    },
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -286,6 +296,10 @@ vim.o.showmode = false
 vim.o.cursorline = true
 vim.o.colorcolumn = "81,121"
 vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = Black, bg = Black })
+
+vim.o.list = true
+vim.o.listchars = "tab:»·,eol:↲,trail:·,extends:»,precedes:«,nbsp:·"
+vim.o.showbreak = "↪ "
 
 vim.keymap.set('n', '<cmd>W', '<cmd>w')
 vim.keymap.set('n', 'Y', 'y$')
