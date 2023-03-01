@@ -136,6 +136,11 @@ require('lazy').setup({
     -- Select and move text.
     'echasnovski/mini.nvim',
     version = "*",
+    config = function()
+      require('mini.move').setup()
+      require('mini.pairs').setup()
+      require('mini.surround').setup()
+    end
   },
 
   {
@@ -202,16 +207,38 @@ require('lazy').setup({
   { -- Syntax highlight comment
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
   },
 
   { -- Center the editor
     "shortcuts/no-neck-pain.nvim",
     version = "*",
     opts = {
-      enableOnVimEnter = true,
-      width = 125,
+      enableOnVimEnter = false,
+      width = 135,
       toggleMapping = "<leader>np",
     },
+  },
+
+  { -- Color parentheses
+    "p00f/nvim-ts-rainbow",
+    version = "*",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        rainbow = {
+          enable = true,
+          extended_mode = true,
+          max_file_lines = nil,
+        },
+      })
+    end
+  },
+
+  { -- Sticky Header for functions and class
+    "wellle/context.vim",
+    version = "*",
+    config = function()
+    end
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -241,7 +268,7 @@ vim.o.hlsearch = false
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = 'n'
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -293,15 +320,12 @@ vim.o.undofile = true
 vim.o.incsearch = true
 vim.o.scrolloff = 8
 vim.o.showmode = false
-vim.o.cursorline = true
-vim.o.colorcolumn = "81,121"
-vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = Black, bg = Black })
+vim.wo.cursorline = true
 
 vim.o.list = true
 vim.o.listchars = "tab:»·,eol:↲,trail:·,extends:»,precedes:«,nbsp:·"
 vim.o.showbreak = "↪ "
 
-vim.keymap.set('n', '<cmd>W', '<cmd>w')
 vim.keymap.set('n', 'Y', 'y$')
 vim.keymap.set('n', '<leader>+', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>vertical resize -5<CR>')
@@ -474,7 +498,6 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -584,6 +607,3 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-require('mini.move').setup()
-require('mini.pairs').setup()
-require("todo-comments").setup()
