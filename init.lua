@@ -115,11 +115,34 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- Theme
+    'marko-cerovac/material.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.g.material_style = "deep ocean"
+      vim.cmd.colorscheme 'material'
+      require('material').setup({
+        plugins = { -- Uncomment the plugins that you use to highlight them
+          -- Available plugins:
+          -- "dap",
+          -- "dashboard",
+          "gitsigns",
+          -- "hop",
+          -- "indent-blankline",
+          -- "lspsaga",
+          "mini",
+          -- "neogit",
+          -- "neorg",
+          "nvim-cmp",
+          -- "nvim-navic",
+          -- "nvim-tree",
+          "nvim-web-devicons",
+          -- "sneak",
+          "telescope",
+          -- "trouble",
+          -- "which-key",
+        },
+      })
     end,
   },
 
@@ -130,7 +153,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'material',
         component_separators = '|',
         section_separators = '',
       },
@@ -416,7 +439,7 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
