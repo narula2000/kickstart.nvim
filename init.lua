@@ -416,7 +416,6 @@ vim.o.wrap = false
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.writebackup = false
-vim.o.undodir = '/Users/vikromn/.vim/undodir/'
 vim.o.undofile = true
 vim.o.incsearch = true
 vim.o.scrolloff = 8
