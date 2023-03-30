@@ -230,6 +230,15 @@ require('lazy').setup({
   },
 
   {
+    -- Highlight Tailwindcss Colors
+    "themaxmarchuk/tailwindcss-colors.nvim",
+    module = "tailwindcss-colors",
+    config = function()
+      require("tailwindcss-colors").setup({})
+    end
+  },
+
+  {
     -- Github Copilot
     'github/copilot.vim',
     version = "*",
