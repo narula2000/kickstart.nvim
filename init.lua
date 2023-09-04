@@ -117,33 +117,11 @@ require('lazy').setup({
 
   {
     -- Theme
-    'marko-cerovac/material.nvim',
+    "olimorris/onedarkpro.nvim",
     priority = 1000,
     config = function()
-      vim.g.material_style = "deep ocean"
-      vim.cmd.colorscheme 'material'
-      require('material').setup({
-        plugins = { -- Uncomment the plugins that you use to highlight them
-          -- Available plugins:
-          -- "dap",
-          -- "dashboard",
-          "gitsigns",
-          -- "hop",
-          -- "indent-blankline",
-          -- "lspsaga",
-          "mini",
-          -- "neogit",
-          -- "neorg",
-          "nvim-cmp",
-          -- "nvim-navic",
-          -- "nvim-tree",
-          "nvim-web-devicons",
-          -- "sneak",
-          "telescope",
-          -- "trouble",
-          -- "which-key",
-        },
-      })
+      vim.cmd.colorscheme 'onedark'
+      require('onedarkpro').setup({})
     end,
   },
 
