@@ -409,6 +409,7 @@ vim.o.incsearch = true
 vim.o.scrolloff = 8
 vim.o.showmode = false
 vim.wo.cursorline = true
+vim.wo.colorcolumn = "80,120"
 
 vim.o.list = true
 vim.o.listchars = "tab:»·,eol:↲,trail:·,extends:»,precedes:«,nbsp:·"
