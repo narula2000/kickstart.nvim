@@ -308,21 +308,6 @@ require('lazy').setup({
   },
 
   {
-    -- Color parentheses
-    "p00f/nvim-ts-rainbow",
-    version = "*",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-          max_file_lines = nil,
-        },
-      })
-    end
-  },
-
-  {
     -- Sticky Header for functions and class
     "wellle/context.vim",
     version = "*",
