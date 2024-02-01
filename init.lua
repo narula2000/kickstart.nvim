@@ -117,11 +117,11 @@ require('lazy').setup({
 
   {
     -- Theme
-    "olimorris/onedarkpro.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
-      require('onedarkpro').setup({})
+      vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
   },
 
@@ -145,8 +145,8 @@ require('lazy').setup({
     version = "*",
     config = function()
       require('mini.move').setup()
-      require('mini.pairs').setup()
       require('mini.surround').setup()
+      require('mini.colors').setup()
     end
   },
 
@@ -165,17 +165,6 @@ require('lazy').setup({
         middle_mouse_command = nil,
       }
     }
-  },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
   },
 
   -- "gc" to comment visual regions/lines
@@ -305,14 +294,6 @@ require('lazy').setup({
       mappings = { enabled = true, toggle = "<leader>np", },
       width = 135,
     },
-  },
-
-  {
-    -- Sticky Header for functions and class
-    "wellle/context.vim",
-    version = "*",
-    config = function()
-    end
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
