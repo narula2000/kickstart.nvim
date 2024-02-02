@@ -28,6 +28,7 @@ vim.wo.cursorline = true
 vim.wo.colorcolumn = "80,120"
 
 -- [[ Custom Keymap ]]
+vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', 'Y', 'y$')
 vim.keymap.set('n', '<leader>+', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>vertical resize -5<CR>')
