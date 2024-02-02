@@ -281,7 +281,8 @@ require('lazy').setup({
 -- Set highlight on search
 vim.o.hlsearch = false
 
--- Make relative line numbers default
+-- Make line numbers with relativenumber default
+vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- Enable mouse mode
