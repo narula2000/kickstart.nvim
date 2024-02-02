@@ -28,7 +28,6 @@ vim.wo.cursorline = true
 vim.wo.colorcolumn = "80,120"
 
 -- [[ Custom Keymap ]]
-vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('n', 'Y', 'y$')
 vim.keymap.set('n', '<leader>+', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>vertical resize -5<CR>')
@@ -93,6 +92,18 @@ return {
       autocmds = { enableOnVimEnter = false, },
       mappings = { enabled = true, toggle = "<leader>np", },
       width = 135,
+    },
+  },
+
+  {
+    -- Better escape
+    "max397574/better-escape.nvim",
+    version = "*",
+    opts = {
+      mapping = { "jk", "jj" },
+      timeout = vim.o.timeoutlen,
+      clear_empty_lines = false,
+      keys = "<Esc>",
     },
   },
 }
