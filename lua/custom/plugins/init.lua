@@ -36,6 +36,7 @@ vim.keymap.set('n', 'U', '<cmd>earlier 1f<CR>')
 vim.keymap.set('n', '<leader>q', '<cmd>bd!<CR>')
 vim.keymap.set('n', '<TAB>', '<cmd>bn<CR>')
 vim.keymap.set('n', '<S-TAB>', '<cmd>bp<CR>')
+vim.keymap.set('n', '<leader>Q', '<cmd>bd<CR>')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Github Copilot Config
