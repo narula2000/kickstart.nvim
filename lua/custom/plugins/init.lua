@@ -94,18 +94,6 @@ return {
       width = 135,
     },
   },
-
-  {
-    -- Better escape
-    "max397574/better-escape.nvim",
-    version = "*",
-    opts = {
-      mapping = { "jk", "jj" },
-      timeout = vim.o.timeoutlen,
-      clear_empty_lines = false,
-      keys = "<Esc>",
-    },
-  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
