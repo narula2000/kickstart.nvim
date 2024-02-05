@@ -86,6 +86,14 @@ return {
   },
 
   {
+    -- Header for context
+    "nvim-treesitter/nvim-treesitter-context",
+    version = "*",
+    opts = {},
+  },
+
+
+  {
     -- Center the editor
     "shortcuts/no-neck-pain.nvim",
     version = "*",
