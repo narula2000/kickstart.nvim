@@ -28,20 +28,19 @@ vim.wo.cursorline = true
 vim.wo.colorcolumn = "80,120"
 
 -- [[ Custom Keymap ]]
-vim.keymap.set('n', 'Y', 'y$')
-vim.keymap.set('n', '<leader>+', '<cmd>vertical resize +5<CR>')
-vim.keymap.set('n', '<leader>-', '<cmd>vertical resize -5<CR>')
-vim.keymap.set('n', '<leader>S', '<cmd>set spell!<CR>')
-vim.keymap.set('n', 'U', '<cmd>earlier 1f<CR>')
-vim.keymap.set('n', '<leader>q', '<cmd>bd!<CR>')
-vim.keymap.set('n', '<TAB>', '<cmd>bn<CR>')
-vim.keymap.set('n', '<S-TAB>', '<cmd>bp<CR>')
-vim.keymap.set('n', '<leader>Q', '<cmd>bd<CR>')
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
+vim.keymap.set('n', '<leader>+', '<cmd>vertical resize +5<CR>', { desc = 'Increase window width' })
+vim.keymap.set('n', '<leader>-', '<cmd>vertical resize -5<CR>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<leader>S', '<cmd>set spell!<CR>', { desc = 'Toggle Spell checking' })
+vim.keymap.set('n', 'U', '<cmd>earlier 1f<CR>', { desc = 'Undo to previous save file' })
+vim.keymap.set('n', '<TAB>', '<cmd>bn<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<S-TAB>', '<cmd>bp<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>Q', '<cmd>bd<CR>', { desc = 'Close buffer' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Github Copilot Config
 vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true, desc = "Accept Copilot suggestion" })
 
 return {
   -- [[ Custom Plugins ]]
